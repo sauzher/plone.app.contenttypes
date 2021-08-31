@@ -550,7 +550,10 @@ def migrateCustomAT(fields_mapping,
                            'dst_portal_type': dst_type,
                            'src_meta_type': src_meta_type,
                            'dst_meta_type': '',
-                           'use_savepoint': True}
+                           'use_savepoint': True,
+                           'full_transaction': False
+        }
+        
         if dry_run:
             walker_settings['limit'] = 1
         walker = CustomQueryWalker(**walker_settings)
